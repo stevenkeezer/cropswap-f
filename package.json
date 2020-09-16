@@ -9,7 +9,7 @@
     "start": "next start -p 7777",
     "test": "NODE_ENV=test jest --watch",
     "heroku-postbuild": "next build",
-    "build:css": "tailwind build src/style.css -o dist/style.css"
+    "build:css": "tailwind build src/style.css -o ../dist/style.css"
   },
   "author": "",
   "license": "ISC",
@@ -73,7 +73,8 @@
     "jest": "^25.4.0",
     "react-test-renderer": "^16.13.1",
     "tailwind.macro": "^1.0.0-alpha.10",
-    "tailwindcss": "^1.7.6"
+    "tailwindcss": "^1.7.6",
+    "webpack": "^4.44.1"
   },
   "jest": {
     "setupFilesAfterEnv": [
