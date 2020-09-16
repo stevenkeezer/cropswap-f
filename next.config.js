@@ -1,3 +1,21 @@
+const withPlugins = require("next-compose-plugins");
 const withCSS = require("@zeit/next-css");
+const withBabelMinify = require("next-babel-minify");
+const withProgressBar = require("next-progressbar");
 
-module.exports = withCSS();
+const nextConfigs = {
+  webpack: (config) => {
+    // Fixes npm packages that depend on `fs` module
+    config.node = {
+      fs: "empty",
+    };
+    config.plugins = [...config.plugins];
+    return config;
+  },
+  target: "serverless",
+};
+
+module.exports = withPlugins(
+  [withCSS({}), withBabelMinify(), withProgressBar({})],
+  nextConfigs
+);
