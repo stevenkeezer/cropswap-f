@@ -9,7 +9,6 @@
     "start": "next start -p 7777",
     "test": "NODE_ENV=test jest --watch",
     "heroku-postbuild": "next build"
-    // "build:css": "tailwind build src/style.css -o dist/style.css"
   },
   "author": "",
   "license": "ISC",
