@@ -1,7 +1,5 @@
 const withPlugins = require("next-compose-plugins");
 const withCSS = require("@zeit/next-css");
-const withBabelMinify = require("next-babel-minify");
-const withProgressBar = require("next-progressbar");
 
 const nextConfigs = {
   webpack: (config) => {
@@ -15,7 +13,4 @@ const nextConfigs = {
   target: "serverless",
 };
 
-module.exports = withPlugins(
-  [withCSS({}), withBabelMinify(), withProgressBar({})],
-  nextConfigs
-);
+module.exports = withPlugins([withCSS({})], nextConfigs);
